@@ -125,7 +125,7 @@ while true; do
     esac
 done
 
-if [ $sudoWithoutPass == "yes" ]; then
+if [[ $sudoWithoutPass == "yes" ]]; then
   # Run sudo commands without password prompt
   sed -i 's/%sudo/#%sudo/g' /etc/sudoers
   echo >> /etc/sudoers "%sudo   ALL=(ALL) NOPASSWD: ALL"
@@ -149,7 +149,7 @@ echo "Installing essential packages"
 
 for software in "${install[@]}"
 do
-  if [ $software == "php7.2" ]; then
+  if [[ $software == "php7.2" ]]; then
     echo "Installing PHP 7.2"
     {
       # PHP 7.2
@@ -164,7 +164,7 @@ do
     } &> /dev/null
   fi
 
-  if [ $software == "php7.1" ]; then
+  if [[ $software == "php7.1" ]]; then
     echo "Installing PHP 7.1"
     {
       # PHP 7.1
@@ -178,7 +178,7 @@ do
     } &> /dev/null
   fi
 
-  if [ $software == "php7.0" ]; then
+  if [[ $software == "php7.0" ]]; then
     echo "Installing PHP 7.0"
     {
       # PHP 7.0
@@ -192,7 +192,7 @@ do
     } &> /dev/null
   fi
 
-  if [ $software == "php5.6" ]; then
+  if [[ $software == "php5.6" ]]; then
     echo "Installing PHP 5.6"
     {
       # PHP 5.6
@@ -475,7 +475,7 @@ if [[ " ${install[@]} " =~ " mysql-server " ]]; then
           * ) echo "Please answer yes or no.";;
       esac
 
-      if [ $remote == "yes" ]; then
+      if [[ $remote == "yes" ]]; then
         mysql --user="root" --password="$password" -e "GRANT ALL ON *.* TO root@'%' IDENTIFIED BY '$password' WITH GRANT OPTION;"
         service mysql restart
       fi
@@ -511,7 +511,7 @@ while true; do
   esac
 done
 
-if [ $sshKeys = "yes" ]; then
+if [[ $sshKeys = "yes" ]]; then
   mkdir -p ~/.ssh
   nano ~/.ssh/authorized_keys
   cd ~/
@@ -536,6 +536,6 @@ echo "Cleaning up..."
   rm -- "$0"
 } &> /dev/null
 
-if [ $sshKeys = "yes" ]; then
+if [[ $sshKeys = "yes" ]]; then
   reboot
 fi
