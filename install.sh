@@ -536,6 +536,6 @@ echo "Cleaning up..."
   rm -- "$0"
 } &> /dev/null
 
-if [[ $sshKeys = "yes" ]]; then
+if [[ $rebootServer = "yes" ]]; then
   reboot
 fi
