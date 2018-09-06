@@ -5,4 +5,5 @@ You will be prompted to install some software. You won't be prompted to install 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Usage
-1. Run `wget https://raw.githubusercontent.com/innovato/web-server-kit/master/install.sh && sudo chmod +x install.sh && sudo ./install.sh`
+1. Run `sudo bash -c "$(curl -sL https://raw.githubusercontent.com/innovato/web-server-kit/master/install.sh)"`
+2. Follow the instructions
