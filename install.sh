@@ -138,6 +138,8 @@ echo "Installing essential packages"
 
   apt-add-repository ppa:ondrej/php -y
 
+  sudo add-apt-repository ppa:certbot/certbot -y
+
   # Update Package Lists
   apt-get update
 
@@ -278,7 +280,7 @@ done
 echo "Installing PHP-FPM"
 {
   apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages \
-  nginx $fpmPackages
+  nginx python-certbot-nginx $fpmPackages
 } &> /dev/null
 
 while true; do
